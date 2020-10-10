@@ -19,7 +19,19 @@ public class Tracker {
             item.setId(items[index].getId());
             items[index] = item;
         } else {
-            System.out.println("Задачи с заданным id не существует, замена невозможна");
+            System.out.println("Заявки с заданным id не существует, замена невозможна");
+        }
+        return index != -1;
+    }
+
+    public boolean delete(int id) {
+        int index = indexOf(id);
+        if (index != -1) {
+            System.arraycopy(items, index + 1, items, index, size - index);
+            items[size - 1] = null;
+            size--;
+        } else {
+            System.out.println("Заявки с заданным id не существует, удаление невозможно");
         }
         return index != -1;
     }
