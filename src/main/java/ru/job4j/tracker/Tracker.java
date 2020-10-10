@@ -15,25 +15,27 @@ public class Tracker {
 
     public boolean replace(int id, Item item) {
         int index = indexOf(id);
-        if (index != -1) {
+        boolean rsl = index != -1;
+        if (rsl) {
             item.setId(items[index].getId());
             items[index] = item;
         } else {
             System.out.println("Заявки с заданным id не существует, замена невозможна");
         }
-        return index != -1;
+        return rsl;
     }
 
     public boolean delete(int id) {
         int index = indexOf(id);
-        if (index != -1) {
+        boolean rsl = index != -1;
+        if (rsl) {
             System.arraycopy(items, index + 1, items, index, size - index);
             items[size - 1] = null;
             size--;
         } else {
             System.out.println("Заявки с заданным id не существует, удаление невозможно");
         }
-        return index != -1;
+        return rsl;
     }
 
     public Item findById(int id) {
