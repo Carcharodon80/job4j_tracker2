@@ -30,8 +30,6 @@ public class Tracker {
             System.arraycopy(items, index + 1, items, index, size - index);
             items[size - 1] = null;
             size--;
-        } else {
-            System.out.println("Заявки с заданным id не существует, удаление невозможно");
         }
         return rsl;
     }
