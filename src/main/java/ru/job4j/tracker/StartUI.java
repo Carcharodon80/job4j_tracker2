@@ -11,7 +11,7 @@ public class StartUI {
             } else if (select == 1) {
                 showItems(tracker);
             } else if (select == 2) {
-                editItem(input, tracker);
+                replaceItem(input, tracker);
             } else if (select == 3) {
                 deleteItem(input, tracker);
             } else if (select == 4) {
@@ -41,7 +41,7 @@ public class StartUI {
         }
     }
 
-    public static void editItem(Input input, Tracker tracker) {
+    public static void replaceItem(Input input, Tracker tracker) {
         int id = input.askInt("Введите id заявки: ");
         String newName = input.askStr("Введите новое имя: ");
         Item newItem = new Item(newName);
